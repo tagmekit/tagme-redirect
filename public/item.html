@@ -13,11 +13,12 @@
           return;
         }
         
-        const airtableToken = "pat9RntUVXY2P6OMr";
         const baseId = "apprezQKZwAZ4oaSn";
         const tableName = "Registered Items";
         
         const apiUrl = `/api/fetch-registered?item_id=${itemId}`;
+        const res = await fetch(apiUrl);
+        const data = await res.json();
 
         try {
           const res = await fetch(apiUrl, {
